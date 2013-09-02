@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Edit your Profile </title>		
+	</head>
+<body>
+	
+<div class="well container-fluid">
+
+<%= success %></br>
+<%= alert %>
+
+
+<%= form_for :user_data do |p| %>
+<%= p.text_field :firstname %>
+<br />
+<%= p.text_field :lastname %>
+<br />
+<%= p.text_field :email %>
+<br />
+<%= p.text_field :password %>
+<br />
+Total Post <%= total_post %>
+<br />
+<%= p.submit 'Edit', :class => 'btn btn-success', :id => params[:id] %>
+<% end  %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>	
+</html>

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>ShareIt</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+		
+
+<div class=" container">
+	
+<% @post.each do |p| %>
+<div class="row span3 well">
+<h1><%= link_to p.title %></br></h1>
+<h3>By: <%= @user.firstname %><br /></h3>
+<hr />
+<%= p.data %></br>
+<hr />
+<h4>Tags: <%= p.tag %></br></h4>
+<hr />
+</div>
+<% end %>
+	
+</div>		
+
+		
+		</div>
+</body>	
+</html>
