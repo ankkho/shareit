@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>ShareIt</title>
+	</head>
+	<body>
+<div class="well container-fluid">
+
+<div class="span3 container">
+<strong>Upload Book Image</strong><br />
+erteterer
+</div>
+
+
+
+<div style=" text-align: center; font-size:50px; font-family: 'Bad Script', cursive;">	
+Start Writing your New Post		
+<br />
+</div>		
+<br />
+<br />
+<div align="center" class="container">
+	
+<% if flash[:alert] %>
+<div class="alert alert-danger">		
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<%= flash[:alert] %>
+</div>
+<% end %>
+<% else %>
+<% flash[:alert] = nil %>
+
+
+
+<%= form_for :post do |p| %>
+<%= p.text_field :title, :placeholder => 'Title', :size => '60' %>
+<br />
+<br />
+<%= p.text_area :data, :placeholder => 'Data', :size => '70' %>
+<hr />
+<%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %>
+<br />
+<%= p.submit 'Save', :class => 'btn btn-success' %>
+<% end  %>
+	
+</div>
+	
+		
+		
+		
+</div>
+</body>	
+</html>

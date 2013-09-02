@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>SignUp for ShareIt</title>	
+
+<!-- Latest compiled and minified CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+			
+	</head>
+<body>
+
+<div class="well container-fluid">
+
+<h1 style=" text-align: center; font-size: 70px; font-family: 'Grand Hotel', cursive;
+ ">SignUp for ShareIt</h1>
+<br />
+<br />
+<br />
+
+
+<%= alert %>
+
+	<% if @user %>
+<div class=" alert-danger">
+<span class= "close" data-dismiss = "alert">&times;</span>
+  <% @user.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+<% end %>	
+	
+</div>	
+
+
+<div align="center" class="container">
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+<%= form_for (:user_data) do |u| %>
+
+<ul style=" list-style: none;">
+Firstname:<li><%= u.text_field :firstname %></li>
+Lastname:	<li><%= u.text_field :lastname %></li>
+Email:	<li><%= u.text_field :email %></li>
+Password:	<li><%= u.password_field :password %></li>
+	<li><%= u.submit 'SignUp', :class => 'btn btn-large btn-success' %></li>
+	<% end %>	
+	
+</ul>		
+
+								
+	
+	
+	
+	
+	
+	
+	
+</div>
+	
+</div>
+
+	
+</body>	
+</html>

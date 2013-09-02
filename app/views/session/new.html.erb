@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WELCOME to Sample Application</title>
+
+
+<!-- Latest compiled and minified CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+		
+
+</head>
+<body>
+
+<div class=" well well -large">
+
+<h2><%= link_to 'ShareIt ', root_path  %></h2>	
+
+
+<%= alert %>
+
+
+<%= form_for :login  do |f| %>
+
+<%= f.email_field :email, :class => 'text', :placeholder => "Email -id" %><br/> 
+<%= f.password_field :password, :class => 'text', :placeholder => "Password" %>
+<br/>
+
+<%= f.submit 'Login', :class => 'btn btn-success' %>
+
+<% end %>
+</div>
+
+</body>
+</html>

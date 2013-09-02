@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shareit</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+<!-- Latest compiled and minified CSS -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+ 
+<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+ 
+</head>
+<body>
+
+<!--header navigation -->
+<nav class="navbar navbar-default" role="navigation">
+
+<a href="http://localhost:3000/" tooltip="Home" class="navbar-brand nav_top" style=" font-size: 50px; font-family: 'Grand Hotel', cursive; color:white; background-color: #593F51; ">ShareIt</a> 
+<%= debug(params) %>
+<ul class="nav navbar-nav">
+<li><%= link_to 'New Post', post_new_path , :class =>'navbar-brand' %></li>
+<li><%= link_to 'All post', post_home_path, :class =>' pull-right, navbar-brand' %></li>
+<li><%= link_to 'Followers',follower_index_path,:class =>'navbar-brand' %></li>
+<li><%= link_to 'Following', following_index_path,:class =>'navbar-brand' %></li>
+<li><%= link_to 'My Post', post_index_path , :class =>'navbar-brand' %></li>
+<li><%= link_to 'Edit Profile', user_edit_path ,:class => 'pull-right, navbar-brand' %></li>
+<li><%= link_to 'Logout', :class =>' pull-right, navbar-brand' %></li>
+
+<%= link_to "ank", user_home_path, :class => "navbar-brand"   %>
+
+</ul>
+
+</nav>	
+
+
+<%= yield %>
+
+</body>
+</html>
