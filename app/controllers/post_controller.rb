@@ -62,7 +62,8 @@ class PostController < ApplicationController
   
   #dislays a particular post(through an id) in details
   def show
-    @users_post = Post.find(post_id)
+    @user = UserData.find(1)
+    @user_post = Post.find(params[:id])
   end
   
   

@@ -3,9 +3,6 @@ Shareit::Application.routes.draw do
     root :to => 'user_data#home'
   
   
-  
-  
-  
   get "following/new"
   get "following/index"
   get "following/create"
@@ -31,6 +28,8 @@ Shareit::Application.routes.draw do
   get "post" => 'post#index', :as => "post_index"
   get "post/:id" => 'post#show', :as => 'post_show'
   
+  
+  
   get "/login" => "session#new", :as => 'login'
   get "session/create"
   get "session/edit"
@@ -51,8 +50,10 @@ Shareit::Application.routes.draw do
   post "session/new" => 'session#create'
   post "post/new" => 'post#create'
   post "post/edit/:id" => 'post#update'
-  
-  
+  post "follower/new"
+  post "follower/create"
+  post "following/new"
+  post "following/create"
   
   
   

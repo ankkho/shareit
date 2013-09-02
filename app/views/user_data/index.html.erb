@@ -7,12 +7,10 @@
 <div class=" container-fluid">
 
 <%= success %>
+<%= alert %>
 
 
-
-
-
-
+<%= button_to 'Follow',:action => 'new', :controller => 'follower'  %>
 
 <div class="well container">
 
@@ -22,7 +20,7 @@ Email: <%= @user.email %><br />
 Total Posts: <%= total_post %>
 <hr />
 Followers
-<%= %>	
+<%= total_follower %>	
 	
 	
 </div>
