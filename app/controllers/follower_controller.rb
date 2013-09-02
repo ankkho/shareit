@@ -2,7 +2,8 @@ class FollowerController < ApplicationController
  
   #displays all the users followers
   def index
-    
+    @follower = Relationship.find_by_user_data_id(1)
+    @all_follower = UserData.where(:id => @follower.follower_id)
   end
  
   #creates an new followers object
