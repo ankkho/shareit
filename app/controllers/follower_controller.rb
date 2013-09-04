@@ -8,7 +8,7 @@ class FollowerController < ApplicationController
  
   #creates an new followers object
   def new
-    @follower = Relationship.new
+    @follower = Relationship.new   
   end
 
 
