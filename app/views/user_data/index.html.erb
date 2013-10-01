@@ -1,43 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-		<head>
+<html>
+	<head>
 		<title>SignUp for ShareIt</title>		
 	</head>
 <body>
-<div class=" container-fluid">
 
-<%= success %>
-<%= alert %>
+<div class="well container-fluid">
 
-
-<%= button_to 'Follow',:action => 'new', :controller => 'follower'  %>
-
-<div class="well container">
-
-Firstname: <%= @user.firstname %><br/>
-Lastname: <%=  @user.lastname %><br />
-Email: <%= @user.email %><br />
-Total Posts: <%= total_post %>
-<hr />
-Followers
-<%= total_follower %>	
-	
-	
+<% if flash[:success] %>
+<div class="alert ">		
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<%= flash[:success] %>
 </div>
-
-
-<div class="well offset3">
-
-</div>	
-	
+<% end %>
+<% else %>
+<% flash[:success] = nil %>
 
 
 
 
 
 
+<div class="container">
 
+<ul>
+<li>Firstname:  <%= @user.firstname %></li>
+<li>Lastname:   <%= @user.lastname %></li>
+<li>Email-id:   <%= @user.email %></li>
+<li>Member since: <%= time_ago_in_words(@user.created_at)  %></li>
+<li><%=  %></li>
+<li><%=  %></li>
+<li><%=  %></li>
+<li><%=  %></li>
+</ul>
 
+</div>
 
 
 
@@ -51,5 +47,9 @@ Followers
 
 
 </div>
+
+</div>
+
+
 </body>	
 </html>

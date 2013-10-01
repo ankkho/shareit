@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.string :data
       t.string :tag
-      t.integer :user_data_id
+      t.integer :users_id
       t.string :img_link
       
 

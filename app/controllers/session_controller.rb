@@ -9,12 +9,13 @@ class SessionController < ApplicationController
 
 
   def create
-    @session = UserData.where(user_data) 
+    @session = UserData.where(:email => params[:email],
+      :password => params[:password]) 
     if @session
       redirect_to root_path and return
     end
   else
-    render :text => 'an error occured'
+    render :text => 'an error occured' 
   end
 
 

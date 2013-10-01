@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<title>ShareIt</title>
 	</head>
@@ -8,7 +7,7 @@
 
 <div class="span3 container">
 <strong>Upload Book Image</strong><br />
-erteterer
+
 </div>
 
 
@@ -32,7 +31,7 @@ Start Writing your New Post
 
 
 
-<%= form_for :post do |p| %>
+<%= form_for :post, :html => {:multipart => true} do |p| %>
 <%= p.text_field :title, :placeholder => 'Title', :size => '60' %>
 <br />
 <br />
@@ -41,6 +40,10 @@ Start Writing your New Post
 <%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %>
 <br />
 <%= p.submit 'Save', :class => 'btn btn-success' %>
+
+<%= p.file_field :p_thumb %>
+
+
 <% end  %>
 	
 </div>

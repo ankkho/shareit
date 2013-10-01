@@ -10,8 +10,10 @@
 	
 <% @post.each do |p| %>
 <div class="row span3 well">
-<h1><%= link_to p.title,post_show_path(:id => p.id) %></br></h1>
+<h1><%= link_to p.title %></br></h1>
 <h3>By: <%= @user.firstname %><br /></h3>
+<hr />
+<%= p.data %></br>
 <hr />
 <h4>Tags: <%= p.tag %></br></h4>
 <hr />

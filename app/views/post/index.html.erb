@@ -29,10 +29,21 @@
 <% end %>
 </div>
 
+
+
 <div class="container row-fluid">
+
+
+<% @post.each do |p| %>
+
+<%= p.title %>
+
+<% end %>
+
 <% @user_post.each do |p| %>
 <div class="row  well">
-<h2><%= link_to p.title, post_show_path(:id => p.id) %></br></h2>
+
+<h2><%= link_to p.title  %></br></h2>
 <hr />
 <h4>Tags: <%= p.tag %></br></h4>
 <hr />

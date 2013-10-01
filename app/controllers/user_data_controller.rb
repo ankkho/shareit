@@ -33,12 +33,11 @@ class UserDataController < ApplicationController
     @user = UserData.find(1)
     
     if @user.update(user_data)
-    redirect_to user_index_path
+    redirect_to user_home_path
     flash[:success] = "Profile updated Successfully!!"
     end
     else
     flash[:alert] = "Sorry!! an error occured"
-
   end
 
   #displays users profile page
@@ -47,7 +46,6 @@ class UserDataController < ApplicationController
 
   #displays users profile page
   def index
-    $user_info = UserData.find(1)
     @user = UserData.find(1)
     @user_post = @user.posts.load
   end
@@ -59,7 +57,7 @@ class UserDataController < ApplicationController
   
   #contains params information (user_data -- :firstname, :lastname, :email, :password )  
   def user_data
-  params.require(:user_data).permit(:firstname, :lastname, :email, :password)
+  params.require(:user).permit(:firstname, :lastname, :email, :password)
   end
   
   

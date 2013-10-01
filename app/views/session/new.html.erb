@@ -17,16 +17,16 @@
 </head>
 <body>
 
-<div class=" well well -large">
 
+
+<div align="center" class=" well well -large">
 
 <%= alert %>
 
-
 <%= form_for :login  do |f| %>
 
-<%= f.email_field :email, :class => 'text', :placeholder => "Email -id" %><br/> 
-<%= f.password_field :password, :class => 'text', :placeholder => "Password" %>
+<%= f.email_field :email, :placeholder => "Email -id" %><br/> 
+<%= f.password_field :password, :placeholder => "Password" %>
 <br/>
 
 <%= f.submit 'Login', :class => 'btn btn-success' %>

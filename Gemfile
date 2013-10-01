@@ -28,7 +28,6 @@ gem 'anjlab-bootstrap-rails'
 gem 'devise'
 gem 'mysql'
 gem "paperclip"
-gem "acts_as_follower"
 
 
 

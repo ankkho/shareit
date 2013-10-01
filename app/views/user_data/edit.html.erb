@@ -10,19 +10,26 @@
 <%= alert %>
 
 
-<%= form_for @user do |p| %>
-<%= p.text_field @user.firstname %>
-<br />
-<%= p.text_field @user.lastname %>
-<br />
-<%= p.text_field @user.email %>
-<br />
-<%= p.text_field @user.password %>
-<br />
-Total Post <%= total_post %>
-<br />
-<%= p.submit 'Edit', :class => 'btn btn-success', :id => 1 %>
+<%= form_for :user do |p| %>
+
+<ul>
+
+<li><%= p.text_field :firstname %></li>
+<li><%= p.text_field :lastname %></li>
+<li><%= p.text_field :email %></li>
+<li><%= p.text_field :password %></li>
+<li>Total Post <%= total_post %></li>
+<li>
+<%= p.submit 'Edit', :class => 'btn btn-success', 
+:id => params[:id] %>	
+</li>
+
+</ul>
+
 <% end  %>
+
+
+
 
 
 

@@ -9,9 +9,10 @@ class PostController < ApplicationController
   #creates a new post object
   def new
   @post = Post.new
+  @post_thumb = Post.new
   end
   
-  #creates a new post
+  #creates a new post and uploads posts thumbnail
   def create
     @user = UserData.find(1)
     @post = @user.posts.build(post_data)
@@ -22,6 +23,8 @@ class PostController < ApplicationController
   else
      flash[:alert] = "Sorry, an error Occured!!"
   end
+
+
   
   #creates a new post object
   def edit
@@ -56,14 +59,16 @@ class PostController < ApplicationController
   #displays the post by user 
   def index
     @user = UserData.find(1)
-    @user_post = @user.posts.load       
+    @user_post = @user.posts.load  
+
+    @post = Post.find(10)
+    
   end
   
   
   #dislays a particular post(through an id) in details
   def show
-    @user = UserData.find(1)
-    @user_post = Post.find(params[:id])
+    @users_post = Post.find(params[:id])
   end
   
   
@@ -80,7 +85,9 @@ class PostController < ApplicationController
     params.require(:post).permit(:id)
   end
   
-  
+  def post_thumbnail
+    params.require(:post)
+  end
   
   
   

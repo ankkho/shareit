@@ -14,6 +14,16 @@
  
 <link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
+<style type="text/css">
+	
+	body
+	{
+		width: 960px;
+	}
+
+
+</style>
  
 </head>
 <body>
@@ -29,10 +39,10 @@
 <li><%= link_to 'Followers',follower_index_path,:class =>'navbar-brand' %></li>
 <li><%= link_to 'Following', following_index_path,:class =>'navbar-brand' %></li>
 <li><%= link_to 'My Post', post_index_path , :class =>'navbar-brand' %></li>
-<li><%= link_to 'Edit Profile', user_edit_path ,:class => 'pull-right, navbar-brand', :id => 1 %></li>
+<li><%= link_to 'Edit Profile', user_edit_path ,:class => 'pull-right, navbar-brand' %></li>
 <li><%= link_to 'Logout', :class =>' pull-right, navbar-brand' %></li>
 
-<%= link_to 'ankit', user_home_path, :class => "navbar-brand"   %>
+<%= link_to "ank", user_home_path, :class => "navbar-brand"   %>
 
 </ul>
 

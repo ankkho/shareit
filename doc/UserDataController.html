@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="text/html; charset=IBM437" http-equiv="Content-Type">
 
 <title>class UserDataController - RDoc Documentation</title>
 
@@ -128,22 +128,6 @@
     <li><a href="./CreatePosts.html">CreatePosts</a>
   
     <li><a href="./CreateUserData.html">CreateUserData</a>
-  
-    <li><a href="./FollowerController.html">FollowerController</a>
-  
-    <li><a href="./FollowerControllerTest.html">FollowerControllerTest</a>
-  
-    <li><a href="./FollowerHelper.html">FollowerHelper</a>
-  
-    <li><a href="./FollowerHelperTest.html">FollowerHelperTest</a>
-  
-    <li><a href="./FollowingController.html">FollowingController</a>
-  
-    <li><a href="./FollowingControllerTest.html">FollowingControllerTest</a>
-  
-    <li><a href="./FollowingHelper.html">FollowingHelper</a>
-  
-    <li><a href="./FollowingHelperTest.html">FollowingHelperTest</a>
   
     <li><a href="./Object.html">Object</a>
   
@@ -331,9 +315,7 @@
           <div class="method-source-code" id="index-source">
             <pre><span class="ruby-comment"># File app/controllers/user_data_controller.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-identifier">$user_info</span> = <span class="ruby-constant">UserData</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">1</span>)
-  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">UserData</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">1</span>)
-  <span class="ruby-ivar">@user_post</span> = <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">load</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">UserData</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">1</span>) 
 <span class="ruby-keyword">end</span></pre>
           </div><!-- index-source -->
           
