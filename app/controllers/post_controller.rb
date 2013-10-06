@@ -1,9 +1,12 @@
 class PostController < ApplicationController
   
+
+
   #displays all the posts of users
   def home
     @user = UserData.find(1)
     @post = Post.all
+
   end
 
   #creates a new post object
@@ -61,35 +64,45 @@ class PostController < ApplicationController
     @user = UserData.find(1)
     @user_post = @user.posts.load  
 
-    @post = Post.find(10)
+    @post = Post.find(2)
     
   end
   
   
-  #dislays a particular post(through an id) in details
+  #dislays a particular post
   def show
-    @users_post = Post.find(params[:id])
+  @user = UserData.find(1)
+  @users_post = Post.find(params[:id])
   end
   
   
   
   
+
+
+
+
+
+
+
+
+
   
   private
   
   def post_data
-    params.require(:post).permit(:title, :data, :tag)
+    params.require(:post).permit(:title, :data, :tag, :page_link, :p_thumb)
   end
   
   def post_id
     params.require(:post).permit(:id)
   end
-  
+
   def post_thumbnail
     params.require(:post)
   end
-  
-  
+
+
   
   
   

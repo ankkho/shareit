@@ -6,16 +6,26 @@
 
 <div class="container-fluid">
 		
-<ul style="list-style: none; font-size: larger">
-<% @users_post.each do |p| %>
-<div  class="well row  span3">
-<li><h2 style="font-family: 'Rum Raisin', sans-serif;"><%=  p.title %></h2></li><br/>
-By: <li><%= @user.firstname %></li></br>
-Tags:<li><%= p.tag %>	</li><br/>
-Created at: <li><%=  time_ago_in_words(p.created_at) + "  ago" %></li><br/>
-<li><hr /></li>	
+<ul>
+
+
+<div  class="well">
+<li>
+<h2 style="font-family: 'Rum Raisin', sans-serif;"><%=  @users_post.title %></h2></li>
+<br/>
+By: <li><%= @user.firstname %></li>
+</br>
+<li><%= @users_post.data %></li>
+</br>
+Tags:<li><%= @users_post.tag %>	</li>
+<br/>
+Created at: <li><%=  time_ago_in_words(@users_post.created_at) + "  ago" %></li><br/>
+<li>
+	<hr />
+</li>	
 </div>
-<% end  %>
+
+
 </ul>
 		
 </div>

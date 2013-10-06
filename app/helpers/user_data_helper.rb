@@ -6,5 +6,11 @@ module UserDataHelper
     @post = @user.posts.count()
   end
   
+
+
+  def users_posts
+  	@p_titles = $user.posts.select(:title,:id)
+  end
+
   
 end

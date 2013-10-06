@@ -2,13 +2,13 @@ class UserDataController < ApplicationController
   
   #displays the welcome page (homepage)
   def home
- render :layout => false   
+ render :layout => false
   end
  
  #creates a new object for user_data
   def new
-    render :layout => false   
     @user = UserData.new
+    render :layout => false 
   end
 
   #create a new user(signup)
@@ -46,8 +46,11 @@ class UserDataController < ApplicationController
 
   #displays users profile page
   def index
-    @user = UserData.find(1)
-    @user_post = @user.posts.load
+    $user = UserData.find(1)
+    @user_post = $user.posts.load
+
+
+
   end
   
   

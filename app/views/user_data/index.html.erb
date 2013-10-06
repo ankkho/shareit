@@ -4,7 +4,7 @@
 	</head>
 <body>
 
-<div class="well container-fluid">
+<div class="container-fluid">
 
 <% if flash[:success] %>
 <div class="alert ">		
@@ -16,22 +16,53 @@
 <% flash[:success] = nil %>
 
 
+<div class="row ">
 
+<div class="well span4">
 
-
-
-<div class="container">
+<div class="pull-right">
+<%= form_tag follower_new_path do %>
+<%= hidden_field_tag :u_id, $user.id %>
+<%= submit_tag 'Follow', :class => 'btn btn-large btn-success' ,:id => $user.id %>
+<% end %>
+</div>
 
 <ul>
-<li>Firstname:  <%= @user.firstname %></li>
-<li>Lastname:   <%= @user.lastname %></li>
-<li>Email-id:   <%= @user.email %></li>
-<li>Member since: <%= time_ago_in_words(@user.created_at)  %></li>
-<li><%=  %></li>
-<li><%=  %></li>
-<li><%=  %></li>
-<li><%=  %></li>
+<li>Firstname:  <%= $user.firstname %></li></br>
+<li>Lastname:   <%= $user.lastname %></li></br>
+<li>Email-id:   <%= $user.email %></li></br>
+<li>Member since: <%= time_ago_in_words($user.created_at)  %></li></br>
 </ul>
+
+</div>
+
+
+	<div class="span4 well">
+
+	<div class="container">
+	<h2>Followers:  <%= total_followers   %></h2>
+	</div>
+
+	<div class="container">
+	<h2>Following:  <%=    %></h2>
+	</div>
+
+	<div class="container">
+	<h2>Total Post:  <%= total_post %></h2>
+	</div>
+
+	</div>
+
+<div class="span4 well">
+
+<% @user_post.each do |p| %>
+<%= link_to p.title, :action => 'show', :controller => 'post', :id => p.id %></br>
+<% end %>
+
+</div>
+
+
+
 
 </div>
 

@@ -11,23 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001155705) do
+ActiveRecord::Schema.define(version: 20131005113103) do
 
-  create_table "authentications", force: true do |t|
-    t.string   "authtype"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "comments", force: true do |t|
-    t.text     "data"
-    t.integer  "posts_id"
+  create_table "followers", force: true do |t|
     t.integer  "user_data_id"
-    t.boolean  "block"
+    t.integer  "following_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131001155705) do
     t.text     "data"
     t.string   "tag"
     t.integer  "user_data_id"
-    t.string   "img_link"
+    t.string   "page_link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "p_thumb_file_name"
@@ -49,8 +37,8 @@ ActiveRecord::Schema.define(version: 20131001155705) do
   create_table "relationships", id: false, force: true do |t|
     t.integer  "user_data_id"
     t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.boolean  "block"
+    t.integer  "following_id"
+    t.integer  "posts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -52,6 +52,7 @@ Shareit::Application.routes.draw do
   post "post/new" => 'post#create'
   post "post/edit/:id" => 'post#update'
   post "ank/edit" => 'user_data#update'
+  post "follower/new" => 'follower#create'
   
   
   

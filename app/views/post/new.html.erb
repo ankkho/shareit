@@ -2,22 +2,10 @@
 	<head>
 		<title>ShareIt</title>
 	</head>
-	<body>
-<div class="well container-fluid">
 
-<div class="span3 container">
-<strong>Upload Book Image</strong><br />
+<body>
+<div class=" container-fluid">
 
-</div>
-
-
-
-<div style=" text-align: center; font-size:50px; font-family: 'Bad Script', cursive;">	
-Start Writing your New Post		
-<br />
-</div>		
-<br />
-<br />
 <div align="center" class="container">
 	
 <% if flash[:alert] %>
@@ -29,26 +17,44 @@ Start Writing your New Post
 <% else %>
 <% flash[:alert] = nil %>
 
-
-
-<%= form_for :post, :html => {:multipart => true} do |p| %>
-<%= p.text_field :title, :placeholder => 'Title', :size => '60' %>
-<br />
-<br />
-<%= p.text_area :data, :placeholder => 'Data', :size => '70' %>
-<hr />
-<%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %>
-<br />
-<%= p.submit 'Save', :class => 'btn btn-success' %>
-
-<%= p.file_field :p_thumb %>
-
-
-<% end  %>
-	
 </div>
-	
+
+
+<div clas="row">
+	<div class="span8 well">
+
+		<h2>Start Writing your new post!!</h2>
+
+		<%= form_for :post, :html => {:multipart => true} do |p| %>
+
+		<ul>
+		<li><h4>Share the Link of your Favourite pages</h4></li>
+		<li><%= p.text_field :page_link, :placeholder => 'Insert the link here',
+		:size => '100' %></li>
+		<li><%= p.text_field :title, :placeholder => 'Title', :size => '60' %></li>
+		<li><%= p.text_area :data, :placeholder => 'Content', :size => '70' %></li>
+		<li><%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %></li>
+		<li><%= p.file_field :p_thumb %></li>
+
+		<li><%= p.submit 'Save', :class => 'btn btn-success' %></li>
+
+		<% end  %>
+
+		</ul>
+
+	</div>
+
+
+	<div class="span4 well">
+
+	<h4>Share the Link of your Favourite Page!!</h4>
 		
+
+	</div>
+
+
+</div>
+
 		
 		
 </div>
