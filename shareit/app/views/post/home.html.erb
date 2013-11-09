@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>ShareIt</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+		
+<div class="row">
+
+<% @post.each do |p| %>
+
+<div class="well span6">
+
+<%= image_tag @p_thumb %>
+<h1><%= link_to p.title, :id => p.id, :action => 'show', :controller => 'post' %></h1>
+</br>
+<h3>By: <%= @user.firstname %></br></h3>
+<hr />
+<h4>Tags: <%= p.tag %></br></h4>
+<hr />
+</div>
+
+<% end %>
+</div>
+	
+
+		
+
+		
+		</div>
+</body>	
+</html>
