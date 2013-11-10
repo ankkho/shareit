@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>SignUp for ShareIt</title>	
+	</head>
+<body>
+
+<div class="container-fluid">
+
+
+
+<div align="center" class="container">
+	
+<% if flash[:alert] %>
+<div class="alert alert-danger">		
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<%= flash[:alert] %>
+</div>
+<% end %>
+<% else %>
+<% flash[:alert] = nil %>
+
+</div>
+
+
+
+<h1 class="logo_font">SignUp for ShareIt</h1>
+
+<div class="well container">
+
+<%= form_for (:user_data) do |u| %>
+
+<ul style=" list-style: none;">
+Firstname:<li><%= u.text_field :firstname %></li>
+Lastname:	<li><%= u.text_field :lastname %></li>
+Email:	<li><%= u.text_field :email %></li>
+Password:	<li><%= u.password_field :password %></li>
+	<li><%= u.submit 'SignUp', :class => 'btn btn-large btn-success' %></li>
+	<% end %>	
+	
+</ul>		
+	
+</div>
+	
+
+
+
+</div>
+</body>	
+</html>

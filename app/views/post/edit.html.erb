@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>ShareIt</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+	<div align="center" class="container">
+	
+<% if flash[:alert] %>
+<div class="alert alert-danger">		
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<%= flash[:alert] %>
+</div>
+<% end %>
+<% else %>
+<% flash[:alert] = nil %>
+
+
+
+<%= form_for :post do |p| %>
+<%= p.text_field :title, :placeholder => 'Title', :size => '60' %>
+<br />
+<br />
+<%= p.text_area :data, :placeholder => 'Data', :size => '70' %>
+<hr />
+<%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %>
+<br />
+<%= p.submit 'Edit', :class => 'btn btn-success', :id => params[:id] %>
+<% end  %>
+
+
+
+	
+</div>	
+		
+		
+		</div>
+</body>	
+</html>

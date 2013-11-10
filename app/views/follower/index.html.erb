@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Welcome to ShareIt</title>
+	</head>
+<body>
+
+<div class="container-fluid">
+
+<h1> Your Followers </h1>
+
+<div class="row">
+
+<div class="well span4">
+
+<%= followers_details.each do |f| %>
+
+<ul>
+<li>Firstname:  <%= f.firstname %></li></br>
+<li>Lastname:   <%= f.lastname %></li></br>
+<li>Email-id:   <%= f.email %></li></br>
+<li>Member since: <%= time_ago_in_words(f.created_at)  %></li></br>
+</ul>
+
+<% end %>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>
