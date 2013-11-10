@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>ShareIt</title>
+	</head>
+	<body>
+
+<div class="container-fluid">
+		
+<ul>
+
+
+<div  class="well">
+<li>
+<h2 style="font-family: 'Rum Raisin', sans-serif;"><%=  @users_post.title %></h2></li>
+<br/>
+By: <li><%= @user.firstname %></li>
+</br>
+<li><%= @users_post.data %></li>
+</br>
+Tags:<li><%= @users_post.tag %>	</li>
+<br/>
+Created at: <li><%=  time_ago_in_words(@users_post.created_at) + "  ago" %></li><br/>
+<li>
+	<hr />
+</li>	
+</div>
+
+
+</ul>
+		
+</div>
+
+
+
+</body>	
+</html>
