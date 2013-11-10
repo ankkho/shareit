@@ -3,13 +3,13 @@
 		<title>ShareIt</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div class="container-fluid top_style">
 		
 <div class="row">
 
 <% @post.each do |p| %>
 
-<div class="well span6">
+<div class="well span4">
 
 <%= image_tag @p_thumb %>
 <h1><%= link_to p.title, :id => p.id, :action => 'show', :controller => 'post' %></h1>

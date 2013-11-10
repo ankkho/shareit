@@ -64,7 +64,7 @@ class PostController < ApplicationController
     @user = UserData.find(1)
     @user_post = @user.posts.load  
 
-    @post = Post.find(2)
+    @post = Post.find(1)
     
   end
   

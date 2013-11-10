@@ -31,21 +31,17 @@
 
 
 
-<div class="container">
+<div class="top_style">
 
 
 <% @user_post.each do |p| %>
 
 
-<div class="well ">
+<div class="well span4 ">
 
 <h2><%= link_to p.title, :id => p.id, :action => 'show', :controller => 'post'  %></br></h2>
 <hr />
-<% if p.page_link.nil? %>
 
-<% else %>
-<%= link_to link_to p.page_link %> 
-<% end %>
 <hr />
 <h4>Tags: <%= p.tag %></br></h4>
 <hr />
