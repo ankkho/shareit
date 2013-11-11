@@ -1,19 +1,13 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # The secret key used by Devise. Devise uses this key to generate
-  # random tokens. Changing this key will render invalid all existing
-  # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '1e0a4ab7f9b7895377956418c29473990d144770df21d74dda7adb27207144d681aca3aff20244e019ecad97b1e793d5653a7d23d0dbb0bc1052ee22119ad770'
-
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
-  # note that it will be overwritten if you use your own mailer class
-  # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  # note that it will be overwritten if you use your own mailer class with default "from" parameter.
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
+  # config.mailer = "Devise::Mailer"
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -67,8 +61,8 @@ Devise.setup do |config|
   # If http headers should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
 
-  # The realm used in Http Basic Authentication. 'Application' by default.
-  # config.http_authentication_realm = 'Application'
+  # The realm used in Http Basic Authentication. "Application" by default.
+  # config.http_authentication_realm = "Application"
 
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
@@ -98,7 +92,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = 'fbf78c5b7fc2b3e27560f0d9206ac03686795563bd1e446aa7babe6b88708862e3d9fd89474eca6197962fff4f07870a921393866b5fb50c20d25c8519759a59'
+  # config.pepper = "2265e43594fe600aa12b67fbcb08e2f7c71a71b4d74482f972dadf2d9051258d585e40772296d819519a6f0927e381db4869bb52ca814d1ca96ce11dd3a3140f"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -223,7 +217,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  # config.navigational_formats = ["*/*", :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -247,12 +241,12 @@ Devise.setup do |config|
   # is mountable, there are some extra configurations to be taken into account.
   # The following options are available, assuming the engine is mounted as:
   #
-  #     mount MyEngine, at: '/my_engine'
+  #     mount MyEngine, at: "/my_engine"
   #
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+  # config.omniauth_path_prefix = "/my_engine/users/auth"
 end

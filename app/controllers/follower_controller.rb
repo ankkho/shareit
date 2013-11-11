@@ -1,8 +1,7 @@
 class FollowerController < ApplicationController
  
   def index
-    @followers = $user.relationships
-    
+    #@followers = $user.relationships
   end
  
  

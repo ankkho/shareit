@@ -8,7 +8,7 @@ class UserDataController < ApplicationController
  #creates a new object for user_data
   def new
     @user = UserData.new
-    #render :layout => false 
+    render :layout => false 
   end
 
   #create a new user(signup)

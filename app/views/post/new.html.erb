@@ -28,8 +28,7 @@
 		<%= form_for :post, :html => {:multipart => true} do |p| %>
 
 		<ul>
-		<li><h4>Share the Link of your Favourite pages</h4></li>
-		<li><%= p.text_field :title, :placeholder => 'Title', :size => '60' %></li>
+		<li><%= p.text_field :title, :placeholder => 'Title', :size => '100' %></li>
 		<li><%= p.text_area :data, :placeholder => 'Content', :size => '70' %></li>
 		<li><%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %></li>
 		<li><%= p.file_field :p_thumb %></li>

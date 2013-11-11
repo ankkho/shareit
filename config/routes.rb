@@ -1,9 +1,8 @@
 Shareit::Application.routes.draw do
   
-  # devise_for :user_data
-    # root :to => 'user_data#home'
-#   
-  # resources :user_data
+    root :to => 'user_data#home'
+  
+  
   
   
   

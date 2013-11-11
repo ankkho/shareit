@@ -31,7 +31,7 @@
 
 
 
-<div class="top_style">
+<div class="container">
 
 
 <% @user_post.each do |p| %>
@@ -40,8 +40,6 @@
 <div class="well span4 ">
 
 <h2><%= link_to p.title, :id => p.id, :action => 'show', :controller => 'post'  %></br></h2>
-<hr />
-
 <hr />
 <h4>Tags: <%= p.tag %></br></h4>
 <hr />
