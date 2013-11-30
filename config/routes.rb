@@ -1,8 +1,17 @@
 Shareit::Application.routes.draw do
   
-    root :to => 'user_data#home'
+  root :to => 'user_data#home'
   
+  resources :user_data
+  resources :session
   
+  get "category/index"
+  get "category/new", :as => 'new_category'
+  get "category/show"
+  get "category/create"
+  get "category/update"
+  get "category/destroy"
+  get "category/edit"
   
   
   
@@ -31,7 +40,7 @@ Shareit::Application.routes.draw do
   get "post" => 'post#index', :as => "post_index"
   get "post/:id" => 'post#show', :as => 'post_show'
   
-  get "session/new", :as => 'login'
+  get "/login" => "session#new", :as => 'login'
   get "session/create"
   get "session/edit"
   get "session/update"
@@ -53,6 +62,10 @@ Shareit::Application.routes.draw do
   post "post/edit/:id" => 'post#update'
   post "ank/edit" => 'user_data#update'
   post "follower/new" => 'follower#create'
+  post "/" => 'session#create'
+  post "/post/home" => 'category#create'
+  
+  
   
   
   

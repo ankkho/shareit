@@ -9,30 +9,27 @@
 <!-- Latest compiled and minified CSS -->
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 
+  
  
-<!-- Latest compiled and minified JavaScript -->
-<script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
- 
+
 </head>
 	
 <body id="home">
 
 <div class="container-fluid">
 
+<%= debug(params) %>
+
 <div class=" pull-right">
-<%= button_to 'Login to ShareIt', login_path, { :type => 'submit', :class => 'btn btn-success btn-large', :method => :get } %>
+<a href="#login" role="button" class="btn btn-large btn-success" data-toggle="modal">Login</a>				
 </div>
 
-
-
-
-
-<div style="background-color: #593F51;" class=" hero-unit"><br />
-<h1 style=" color: white; text-align: center; font-size: 100px; font-family: 'Grand Hotel', cursive;">ShareIt</h1>
+<div style="background-color: #593E6F;" class=" hero-unit"><br />
+<h1 style=" color: white; text-align: center; font-size: 150px; font-family: 'Grand Hotel', cursive;">ShareIt</h1>
 <h3 style=" color: white; text-align: center;">
 Share your Favourite Pages with Friends</h3>
 <div align="center" class=" container " style=" color: white; font-size: 30px; text-align: center;"><br />
-<%= button_to 'SignUp to create new account', signup_path , { :type => 'submit', :class => 'btn-lg btn-block btn btn-success btn-large', :method => :get } %>
+<a href="#signup" role="button" class="btn btn-large btn-block btn-success" data-toggle="modal">SignUp</a>				
 <br />
 <%= link_to 'All post', post_home_path %><br />
 </div>
@@ -63,6 +60,46 @@ Share your Favourite Pages with Friends</h3>
 	</div>
 
 </div>
+
+
+
+
+<!-- signup box -->
+<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="signupLabel">SignUp for Shareit</h3>
+  </div>
+  <div class="modal-body">
+<%= render :template =>  '/user_data/new' %>
+  </div>
+  <div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+
+
+<!-- login box -->
+<div id="login" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-header"> 
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="loginLabel">Login to Shareit</h3>
+  </div>
+  <div class="modal-body">
+<%= render :template =>  '/session/new' %>
+  </div>
+  <div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+<%= render '/user_data/categories'  %>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 
 
 </body>

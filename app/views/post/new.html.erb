@@ -28,14 +28,10 @@
 		<%= form_for :post, :html => {:multipart => true} do |p| %>
 
 		<ul>
-		<li><%= p.text_field :title, :placeholder => 'Title', :size => '100' %></li>
+		<li><%= p.text_field :title, :placeholder => 'Title', :size => '150' %></li>
 		<li><%= p.text_area :data, :placeholder => 'Content', :size => '70' %></li>
-		<li><%= p.text_field :tag, :placeholder => 'Tags', :size => '30' %></li>
-		<li><%= p.file_field :p_thumb %></li>
-
-		<li><%= p.submit 'Save', :class => 'btn btn-success' %></li>
-
-		<% end  %>
+		<li><%= p.text_field :tag, :placeholder => 'Tags',:id => 'cat_tag',:class => 'tag-list', :size => '30' %></li>
+		<li><%= p.submit 'Share', :class => 'btn btn-success' %></li>
 
 		</ul>
 
@@ -45,15 +41,73 @@
 	<div class="span4 well">
 
 	<h4>Share the Link of your Favourite Page!!</h4>
-		
+	
+	<ul>
+		<li><%= p.text_field :title, :placeholder => 'Title', :size => '150' %></li>
+		<li><%= p.text_field :data, :placeholder => 'url', :size => '70' %></li>
+		<li><%= p.text_field :tag, :placeholder => 'Tags',:id => 'cat_tag', :size => '30' %></li>
 
+		<li><%= p.submit 'Share', :class => 'btn btn-success' %></li>
+	
 	</div>
 
-
+<% end  %>
+</div>	
+	
 </div>
 
-		
-		
-</div>
+
+<script>
+            $(function() {	
+            	pressedUp = function(e) { console.log('pressed up'); };
+            	beforeAddingTag = function (tag) {
+            		console.log(tag);
+            		// maybe fetch some content for the tag popover (can be HTML)
+            	};
+            	excludes = function (tag) {
+            		// return false if this tagger does *not* exclude
+            		// -> returns true if tagger should exclude this tag
+            		// --> this will exclude anything with !
+            		return (tag.indexOf("!") != -1);
+            	}
+            	var tags = $('#cat_tag').tags( {
+            		suggestions : ["here", "are", "some", "suggestions"],
+            		popoverData : ["What a wonderful day", "to make some stuff", "up so that I", "can show it works"],
+                  popoverTrigger : 'hoverShowClickHide',
+            		tagData: ["tag a", "tag b", "tag c", "tag d"],
+            		excludeList : ["excuse", "my", "vulgarity"],
+            		excludes : excludes,
+            		tagRemoved: function(tag) { console.log(tag) }
+            	} );
+            	var alsoTags = $('#one').tags();
+            	alsoTags.removeTag("tag c");
+            	console.log(tags.removeTag("tag a").renameTag("tag b", "new tag b").addTag("added tag").getTags());
+               $('#cat_tag').tags( {
+                  tagData: ['some', 'tags','that', 'aren\'t', 'editable'],
+                  readOnly: true
+               });
+            	$('#cat_tag').tags( {
+            		suggestions : ["there", "were", "some", "suggested", "terms", "super", "secret", "stuff"],
+            		restrictTo : ["restrict", "to", "these"],
+            		beforeAddingTag : beforeAddingTag,
+            		pressedUp : pressedUp,
+            		tagClass : 'btn-warning' } );
+            	$('#cat_tag').tags( {
+            		tagData  : ["alphabet", "soup", "bouncy", "castle"],
+            		tagClass : 'btn-success'
+            	});
+            	$('#cat_tag').tags(0).addTag('testing jQuery-ness');
+            	$('#cat_tag').tags( {
+            		tagData  : ["alphabet", "soup", "bouncy", "castle"],
+            		tagClass : 'btn-danger disabled'
+            	});
+            	$('#cat_tag').tags( {
+            		promptText : "Custom prompt..."
+            	});
+            });
+              
+         </script>
+
+
 </body>	
 </html>

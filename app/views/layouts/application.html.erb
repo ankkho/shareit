@@ -1,35 +1,40 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Shareit</title>
+  
+
+  
+<% cache do %>  
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
 
 
 <!-- google web fonts -->
 <link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
-
-  
 <!-- Latest compiled and minified CSS -->
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
  
 <!-- Latest compiled and minified JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
- 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+
+<link src="vendor/bootstrap plugins/bootstrap-tags/css/" />
 
 
 
 
- 
 </head>
 <body>
 
-<% cache do %>
 
 
 <%= debug(params) %>
@@ -39,18 +44,18 @@
 <div class="navbar-inner">
 <a href="http://localhost:3000/" tooltip="Home" class="brand nav_logo">ShareIt</a> 
 
+
 <ul class="nav">
 <li><%= link_to 'New Post', post_new_path , :class =>'navbar-brand' %></li>
-<li><%= link_to 'All post', post_home_path, :class =>' pull-right, navbar-brand' %></li>
+<li><%= link_to 'All Posts', post_home_path, :class =>'navbar-brand' %></li>
 <li><%= link_to 'Followers',follower_index_path,:class =>'navbar-brand' %></li>
 <li><%= link_to 'Following', following_index_path,:class =>'navbar-brand' %></li>
 <li><%= link_to 'My Post', post_index_path , :class =>'navbar-brand' %></li>
-<li><%= link_to 'Edit Profile', user_edit_path ,:class => 'pull-right, navbar-brand' %>
-</li>
+<li><%= link_to 'Edit Profile', user_edit_path ,:class => 'pull-right, navbar-brand' %></li>
 <li><%= link_to 'Logout', :class =>' pull-right, navbar-brand' %></li>
-<li><%= link_to "ank", user_home_path, :class => "navbar-brand " %></li>
-
-
+<li><%= link_to "#{current_user.firstname}", user_home_path, :class => "navbar-brand " %></li>
+<li><a id="all_cat"  class="dropdown-toggle navbar-brand" data-toggle="dropdown" href="#">All Category <b class="caret"></b></a>
+</li>
 </ul>
 
 </div>
@@ -59,6 +64,9 @@
 
 
 <%= yield %>
+
+
+
 
 </body>
 </html>

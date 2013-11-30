@@ -32,6 +32,11 @@ span.to_s.html_safe
 end
 
 
+def current_user
+  current_user = UserData.find(1)
+end
+
+
     
 end
 

@@ -1,0 +1,13 @@
+<%= form_for :category, :html => {:multipart => true} do |c| %>
+
+
+<div class="dropdown id="category" >
+<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+<% Category.all.each do |c| %>
+<li><%= button_tag c.title, :class => 'btn btn-success' %></br></li>	
+<% end %>	
+</ul>
+</div>
+<% end %>
+
+

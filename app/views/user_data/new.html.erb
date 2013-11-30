@@ -1,9 +1,3 @@
-<html>
-	<head>
-		<title>SignUp for ShareIt</title>	
-	</head>
-<body>
-
 <div class="container-fluid">
 
 
@@ -23,11 +17,10 @@
 
 
 
-<h1 class="logo_font">SignUp for ShareIt</h1>
 
-<div class="well container">
+<div class="well span4 container">
 
-<%= form_for (:user_data) do |u| %>
+<%= form_for (:user) do |u| %>
 
 <ul style=" list-style: none;">
 Firstname:<li><%= u.text_field :firstname %></li>
@@ -41,9 +34,4 @@ Password:	<li><%= u.password_field :password %></li>
 	
 </div>
 	
-
-
-
 </div>
-</body>	
-</html>

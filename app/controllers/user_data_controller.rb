@@ -1,5 +1,8 @@
 class UserDataController < ApplicationController
   
+  #before_filter :authenticate_user!
+  
+  
   #displays the welcome page (homepage)
   def home
  render :layout => false
@@ -40,6 +43,8 @@ class UserDataController < ApplicationController
     flash[:alert] = "Sorry!! an error occured"
   end
 
+
+
   #displays users profile page
   def show
   end
@@ -60,7 +65,7 @@ class UserDataController < ApplicationController
   
   #contains params information (user_data -- :firstname, :lastname, :email, :password )  
   def user_data
-  params.require(:user).permit(:firstname, :lastname, :email, :password)
+  params.require(:user).permit(:firstname, :lastname, :email, :encrypted_password)
   end
   
   

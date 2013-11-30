@@ -1,0 +1,25 @@
+
+	
+<div class="well container-fluid">
+
+<%= success %></br>
+<%= alert %>
+
+
+<%= form_for :category do |p| %>
+
+<ul>
+
+<li><%= p.text_field :title, :placeholder => 'Title for Category' %></li>
+<li><%= p.text_area :desc, :placeholder => 'Description for Category' %></li>
+<li>
+<%= p.submit 'Save', :class => 'btn btn-success' %>	
+</li>
+
+</ul>
+
+<% end  %>
+
+
+</div>
+

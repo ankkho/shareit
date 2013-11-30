@@ -1,6 +1,6 @@
 class PostController < ApplicationController
   
-
+  #before_filter :authenticate_user_data!
 
   #displays all the posts of users
   def home
@@ -47,10 +47,10 @@ class PostController < ApplicationController
  end
     
     
-  #deletes the post data 
+  #delets the post data 
   def destroy
     @post = Post.find(params[:id])
-   if @post.destroy  
+   if @post.destroy
    redirect_to post_index_path
    flash[:success] = "Your Post have been deleted successfully!!"
    end
